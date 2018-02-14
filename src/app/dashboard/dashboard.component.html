@@ -1,0 +1,10 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let lion of lions" class="col-1-4" routerLink="/detail/{{lion.id}}">
+    <div class="module lion">
+      <h4>{{ lion.name }}</h4>
+    </div>
+  </a>
+</div>
+
+<app-lion-search></app-lion-search>

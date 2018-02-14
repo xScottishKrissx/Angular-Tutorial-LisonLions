@@ -1,0 +1,26 @@
+
+  <h2>The Lions</h2>
+
+  <!-- <app-lion-detail [lion]="selectedLion"></app-lion-detail> -->
+
+  <br/>
+
+  <ul class="lions">
+    <!-- NgForOf is a repeater directive — a way to present a list of items. You
+    define a block of HTML that defines how a single item should be displayed.
+    You tell Angular to use that block as a template for rendering each item in
+    the list. -->
+    <li *ngFor="let lion of lions"  >
+      <a routerLink="/detail/{{lion.id}}">
+        <span class="badge">{{lion.id}}</span>{{lion.name}}
+      </a>
+      <button class="delete" title="delete lion" (click)="delete(lion)">x</button>
+    </li>
+  </ul>
+
+  <div>
+    <label>Lion Name:
+      <input #lionName>
+    </label>
+    <button (click)="add(lionName.value); lionName.value=''">Add</button>
+  </div>

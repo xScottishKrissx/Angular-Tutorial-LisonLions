@@ -1,0 +1,15 @@
+<div *ngIf="lion">
+  <h2>{{lion.name | uppercase}}</h2>
+  <div>Number <span>{{lion.id}}</span></div>
+
+  <br/>
+
+  <div>
+    <label>Name:
+      <input [(ngModel)]="lion.name" placeholder="name">
+    </label>
+  </div>
+  <button (click)="save()">Save</button>
+  <br/><br/>
+  <button (click)="goBack()">Back</button>
+</div>
